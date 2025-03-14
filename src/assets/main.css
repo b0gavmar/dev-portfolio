@@ -1,4 +1,3 @@
-/* Global Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +17,6 @@ body {
   padding: 20px;
 }
 
-/* Home Section Styles */
 .home {
   text-align: center;
   padding: 3rem;
@@ -47,7 +45,6 @@ body {
   font-style: italic;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .home {
     padding: 2rem;
