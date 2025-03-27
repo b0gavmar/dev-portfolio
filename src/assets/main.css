@@ -58,3 +58,32 @@ body {
     font-size: 1.5rem;
   }
 }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+@media (min-width: 1024px) {
+  header {
+    padding: 1.5rem 4rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+}
+
+.container-fluid {
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 1rem;
+  margin: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}

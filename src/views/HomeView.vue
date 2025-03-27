@@ -21,8 +21,3 @@
   </div>
 </template>
 
-<style scoped>
-.home {
-  max-width: 600px;
-}
-</style>

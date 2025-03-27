@@ -1,21 +1,22 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import TechnologiesComponent from './components/TechnologiesComponent.vue';
+import ProjectsComponent from './components/ProjectsComponent.vue';
+import Navbar from './components/Navbar.vue';
+import About from './components/About.vue';
 </script>
 
 <template>
   <header>
-    <div class="logo">
-    </div>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/technologies">Technologies</RouterLink>
-      <RouterLink to="/ides">IDEs</RouterLink>
-      <RouterLink to="/projects">Projects</RouterLink>
-    </nav>
+    <Navbar/>
   </header>
 
-  <RouterView />
+  <About/>
+
+  <div class="container-fluid">
+    <TechnologiesComponent/>
+    <ProjectsComponent />
+  </div>
 
 
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -27,60 +28,10 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#github"></use></svg></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#github">Github</use></svg></a></li>
       <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#email"></use></svg></a></li>
     </ul>
   </footer>
 </template>
 
-<style scoped>
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav a:hover {
-  background-color: #f0f0f0;
-  color: #000;
-}
-
-nav a.router-link-exact-active {
-  background-color: #2575fc;
-  color: #fff;
-}
-
-/* Responsive adjustments for larger screens */
-@media (min-width: 1024px) {
-  header {
-    padding: 1.5rem 3rem;
-  }
-  nav a {
-    font-size: 1rem;
-  }
-}
-</style>
