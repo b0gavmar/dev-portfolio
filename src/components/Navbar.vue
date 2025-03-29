@@ -1,40 +1,98 @@
+<script setup>
+import { ref } from 'vue'
+
+const active = ref('')
+
+function setActive(section) {
+  active.value = section
+}
+</script>
+
 <template>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/technologies">Technologies</RouterLink>
-      <RouterLink to="/ides">IDEs</RouterLink>
-      <RouterLink to="/projects">Projects</RouterLink>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fs-5">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              :class="{ active: activeSection === 'about' }"
+              href="#about"
+              @click="setActive('about')"
+            >
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              :class="{ active: activeSection === 'technologies' }"
+              href="#technologies"
+              @click="setActive('technologies')"
+            >
+              Technologies
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              :class="{ active: activeSection === 'projects' }"
+              href="#projects"
+              @click="setActive('projects')"
+            >
+              Projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              :class="{ active: activeSection === 'ides' }"
+              href="#ides"
+              @click="setActive('ides')"
+            >
+              IDEs
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </template>
+
 <style scoped>
-
-
-
 nav {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
 nav a {
   text-decoration: none;
   color: white;
-  font-weight: 500;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 nav a:hover {
   background-color: rgba(255, 255, 255, 0.2);
+  color: white;
   transform: translateY(-2px);
 }
 
-nav a.router-link-exact-active {
+.nav-link.active {
   background-color: rgba(255, 255, 255, 0.3);
   font-weight: 600;
+  color: white;
 }
-
-
 </style>

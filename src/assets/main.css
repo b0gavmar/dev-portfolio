@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: #e7e7e7;
   color: #333;
   line-height: 1.6;
 }
@@ -46,6 +46,9 @@ body {
   }
 }
 
+.custombg {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
 
 .home h1 {
   font-size: 2.5rem;
