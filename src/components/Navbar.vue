@@ -1,11 +1,24 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-const active = ref('')
+const theme = ref('')
+const isDarkMode = ref(false)
 
 function setActive(section) {
   active.value = section
 }
+const toggleTheme = () => {
+  isDarkMode.value = !isDarkMode.value
+  document.body.classList.toggle('dark-mode', isDarkMode.value)
+}
+
+onMounted(() => {
+  const stored = localStorage.getItem('darkMode')
+  if (stored === 'true') {
+    isDarkMode.value = true
+    document.body.classList.add('dark-mode')
+  }
+})
 </script>
 
 <template>
@@ -24,6 +37,11 @@ function setActive(section) {
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto fs-5">
+          <li class="my-auto">
+            <button @click="toggleTheme()" class="btn btn-light">
+              <div class="bi-moon-fill"></div>
+            </button>
+          </li>
           <li class="nav-item">
             <a
               class="nav-link"
