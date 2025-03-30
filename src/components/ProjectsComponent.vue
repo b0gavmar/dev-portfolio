@@ -22,7 +22,7 @@ const projects = [
         :key="index"
         class="col-md-4"
       >
-        <div class="card h-100 shadow-sm project-card">
+        <div class="card h-100 shadow-sm infocard">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title text-primary">{{ project.title }}</h5>
             <p class="card-text flex-grow-1">{{ project.description }}</p>
@@ -34,12 +34,5 @@ const projects = [
 </template>
 
 <style scoped>
-.project-card {
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
+
 </style>

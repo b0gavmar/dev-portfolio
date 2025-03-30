@@ -28,10 +28,10 @@ function setActive(section) {
             <a
               class="nav-link"
               :class="{ active: activeSection === 'about' }"
-              href="#about"
+              href="#aboutme"
               @click="setActive('about')"
             >
-              About
+              About Me
             </a>
           </li>
           <li class="nav-item">
@@ -57,11 +57,11 @@ function setActive(section) {
           <li class="nav-item">
             <a
               class="nav-link"
-              :class="{ active: activeSection === 'ides' }"
-              href="#ides"
-              @click="setActive('ides')"
+              :class="{ active: activeSection === 'schools' }"
+              href="#schools"
+              @click="setActive('schools')"
             >
-              IDEs
+              Schools
             </a>
           </li>
         </ul>

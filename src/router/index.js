@@ -25,7 +25,7 @@ const router = createRouter({
     {
       path: '/ides',
       name: 'ides',
-      component: () => import('../components/IDEsComponent.vue'),
+      component: () => import('../components/SchoolsComponent.vue'),
     },
     {
       path: '/projects',
